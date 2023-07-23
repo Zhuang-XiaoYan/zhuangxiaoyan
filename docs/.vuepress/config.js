@@ -27,7 +27,7 @@ module.exports = {
                 nav: getNavMenu(),
                 sidebar: {
                     '/resume/': getResumeSidebar(),
-                    '/project/': getProjectList('混合云系统项目','DevOps系统项目','Mall电商项目','Admin管理项目','大数据库项目'),
+                    '/project/': getProjectList('云系统平台项目','DevOps系统项目','Mall电商项目','Admin管理项目','大数据库项目'),
                     '/blog/': getBlogSidebar('数据结构与算法','数据库','计算机网络','操作系统','Java语言','Go语言','JDK源码','Spring框架','Mybatis框架','JUC并发编程','Nginx框架','RabbitMQ中间件','Kafka中间件','Rpc中间件','Redis中间件','Docker','KubeSphere'),
                     // '/ai/': getAIList('AI项目'),
                 }
