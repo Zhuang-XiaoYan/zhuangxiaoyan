@@ -8,31 +8,36 @@ module.exports = {
     themeConfig: {
         locales: {
             '/': {
+                // 多语言下拉菜单的标题
+                selectText: '选择语言',
+                // 该语言在下拉菜单中的标签
+                label: '简体中文',
+                // 编辑链接文字
+                editLinkText: '在 GitHub 上编辑此页',
+                // Service Worker 的配置
+                serviceWorker: {
+                    updatePopup: {
+                        message: "发现新内容可用.",
+                        buttonText: "刷新"
+                    }
+                },
+                // 当前 locale 的 algolia docsearch 选项
+                algolia: {},
+                editLinkText: '在 GitHub 上编辑此页',
                 nav: getNavMenu(),
                 sidebar: {
                     '/resume/': getResumeSidebar(),
-                    '/blog/': getGuideSidebar('博客目录'),
-                    '/project/': getProjectList('实战项目'),
-                    '/ai/': getProjectList('AI项目'),
+                    '/project/': getProjectList('混合云系统项目','DevOps系统项目','Mall电商项目','Admin管理项目','大数据库项目'),
+                    '/blog/': getBlogSidebar('数据结构与算法','数据库','计算机网络','操作系统','Java语言','Go语言','JDK源码','Spring框架','Mybatis框架','JUC并发编程','Nginx框架','RabbitMQ中间件','Kafka中间件','Rpc中间件','Redis中间件','Docker','KubeSphere'),
+                    // '/ai/': getAIList('AI项目'),
                 }
             },
         }
     },
     plugins: [
         '@vuepress/back-to-top',
-        // [
-        //     'qrcode',
-        //     {
-        //         labelText: {
-        //             "/": "个人二维码",
-        //         },
-        //         size: 'small',
-        //         channel: true
-        //     }
-        // ]
     ],
 }
-
 
 // 获取nav菜单
 function getNavMenu() {
@@ -44,46 +49,28 @@ function getNavMenu() {
         },
         {
             text: '庄小焱博客',
+            link: '/blog/',
             ariaLabel: '博客',
-            items: getBlogList(),
         },
         {
             text: '实战项目',
+            link: '/project/',
             ariaLabel: '项目',
-            items: getProject(),
         },
         {
             text: 'AI项目',
-            ariaLabel: 'AI',
-            items: getProject(),
+            link: '/ai/',
+            ariaLabel: 'AI项目',
         },
         {
             text: '个人账号',
-            items: [
-                {text: '庄小焱-博客', link: 'https://zhuang-xiaoyan.github.io/zhuangxiaoyan/'},
-                {text: '庄小焱-雀语', link: 'https://www.yuque.com/zhuangxiaoyan'},
-                {text: '庄小焱-Github', link: 'https://github.com/Zhuang-XiaoYan'},
-                {text: '庄小焱-Gitee', link: 'https://gitee.com/xjl2462612540'},
-                {text: '庄小焱-CSDN', link: 'https://blog.csdn.net/weixin_41605937'},
-            ]
+            items: getMyAccount()
         }
     ]
 }
 
 // 获取简历菜单
-function getResumeSidebar() {
-    return [
-        {
-            collapsable: false,
-            children: [
-                '',
-            ]
-        }
-    ]
-}
-
-// 获取侧边栏菜单
-function getGuideSidebar(groupA) {
+function getResumeSidebar(groupA) {
     return [
         {
             title: groupA,
@@ -95,291 +82,181 @@ function getGuideSidebar(groupA) {
     ]
 }
 
-// 获取Athena实战项目
-function getProjectList(groupA) {
+// 获取实战项目
+function getProjectList(groupA,groupB,groupC,groupD,groupE) {
     return [
         {
-            text: 'Athena-Mall系统',
-            link: '/project/athena/mall.html'
+            title: groupA,
+            collapsable: false,
+            children: [
+                '',
+            ]
         },
         {
-            text: 'Athena-Admin系统',
-            link: '/project/athena/admin.html'
+            title: groupB,
+            collapsable: false,
+            children: [
+                'devops-cicd',
+            ]
+        },
+        {
+            title: groupC,
+            collapsable: false,
+            children: [
+                'athena-mall',
+            ]
+        },
+        {
+            title: groupD,
+            collapsable: false,
+            children: [
+                'athena-admin',
+            ]
+        },
+        {
+            title: groupE,
+            collapsable: false,
+            children: [
+                'hera-bigdata',
+            ]
         },
     ]
 }
 
-function getBlogList() {
+// 获取个人账户
+function getMyAccount(groupA) {
+    return [
+        {text: '庄小焱-博客', link: 'https://zhuang-xiaoyan.github.io/zhuangxiaoyan/'},
+        {text: '庄小焱-雀语', link: 'https://www.yuque.com/zhuangxiaoyan'},
+        {text: '庄小焱-Github', link: 'https://github.com/Zhuang-XiaoYan'},
+        {text: '庄小焱-Gitee', link: 'https://gitee.com/xjl2462612540'},
+        {text: '庄小焱-CSDN', link: 'https://blog.csdn.net/weixin_41605937'},
+    ]
+}
+
+// 获取博文详细资料
+function getBlogSidebar(groupA,groupB,groupC,groupD,groupE,groupF,groupG,groupH,groupI,groupJ,groupK,groupO,groupL,groupM,groupN,groupP,groupQ) {
     return [
         {
-            items: getLeetcodeList(),
+            title: groupA,
+            collapsable: false,
+            children: [
+                '',
+            ]
         },
         {
-
-            items: getDBList(),
+            title: groupB,
+            collapsable: false,
+            children: [
+                'database',
+            ]
         },
         {
-
-            items: getOSList(),
+            title: groupC,
+            collapsable: false,
+            children: [
+                'network',
+            ]
         },
         {
-
-            items: getNetworkList(),
+            title: groupD,
+            collapsable: false,
+            children: [
+                'os',
+            ]
         },
         {
-
-            items: getLanguageList(),
+            title: groupE,
+            collapsable: false,
+            children: [
+                'java',
+            ]
         },
         {
-
-            items: getJucList(),
+            title: groupF,
+            collapsable: false,
+            children: [
+                'go',
+            ]
         },
         {
-
-            items: getKafkaList(),
+            title: groupG,
+            collapsable: false,
+            children: [
+                'jdk',
+            ]
         },
         {
-
-            items: getMybatisList(),
+            title: groupH,
+            collapsable: false,
+            children: [
+                'spring',
+            ]
         },
         {
-
-            items: getNginxList(),
+            title: groupI,
+            collapsable: false,
+            children: [
+                'mybatis',
+            ]
         },
         {
-
-            items: getRabbitMqList(),
+            title: groupJ,
+            collapsable: false,
+            children: [
+                'juc',
+            ]
         },
         {
-
-            items: getRedisList(),
+            title: groupK,
+            collapsable: false,
+            children: [
+                'nginx',
+            ]
         },
         {
-
-            items: getRpcList(),
+            title: groupO,
+            collapsable: false,
+            children: [
+                'rabbitmq',
+            ]
         },
         {
-
-            items: getSpringList(),
+            title: groupL,
+            collapsable: false,
+            children: [
+                'kafka',
+            ]
         },
         {
-
-            items: getVueList(),
+            title: groupM,
+            collapsable: false,
+            children: [
+                'rpc',
+            ]
         },
         {
-
-            items: getDevopsList(),
+            title: groupN,
+            collapsable: false,
+            children: [
+                'redis',
+            ]
         },
         {
-
-            items: getDockerList(),
+            title: groupP,
+            collapsable: false,
+            children: [
+                'docker',
+            ]
         },
         {
-
-            items: getKubesphereList(),
-        },
-        {
-
-            items: getDesignList(),
+            title: groupQ,
+            collapsable: false,
+            children: [
+                'kubesphere',
+            ]
         },
     ]
 }
 
-function getProject() {
-    return [
-        {
-            text: 'Athena项目',
-            items: getAthenaList(),
-        },
-        {
-            text: 'Hera项目',
-            items: getHeraList(),
-        },
-    ]
-}
-
-function getAthenaList(groupA) {
-    return [
-        {
-            text: 'Athena-Mall系统',
-            link: '/project/athena/mall.html'
-        },
-        {
-            text: 'Athena-Admin系统',
-            link: '/project/athena/admin.html'
-        },
-    ]
-}
-
-
-function getHeraList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getLeetcodeList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getDBList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getOSList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getNetworkList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getLanguageList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getJucList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getKafkaList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getMybatisList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getNginxList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getRabbitMqList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getRedisList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getRpcList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getSpringList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getVueList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getDevopsList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getDockerList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getKubesphereList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
-
-function getDesignList(groupA) {
-    return [
-        {
-            text: 'Hera系统',
-            link: '/project/hera/bigdata.html'
-        },
-    ]
-}
 
