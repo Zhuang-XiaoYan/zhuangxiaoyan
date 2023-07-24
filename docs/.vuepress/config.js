@@ -27,8 +27,8 @@ module.exports = {
                 nav: getNavMenu(),
                 sidebar: {
                     '/resume/': getResumeSidebar(),
-                    '/project/': getProjectList('云系统平台项目','DevOps系统项目','Mall电商项目','Admin管理项目','大数据库项目'),
-                    '/blog/': getBlogSidebar('数据结构与算法','数据库','计算机网络','操作系统','Java语言','Go语言','JDK源码','Spring框架','Mybatis框架','JUC并发编程','Nginx框架','RabbitMQ中间件','Kafka中间件','Rpc中间件','Redis中间件','Docker','KubeSphere'),
+                    '/project/': getProjectList('云计算平台项目','DevOps系统项目','Mall电商项目','Admin管理项目','大数据库项目'),
+                    '/blog/': getBlogSidebar('数据结构与算法','数据库','计算机网络','操作系统','Java语言','Go语言','Vue全家桶','JDK源码','Spring全家桶','Mybatis框架','JUC并发编程','Nginx框架','RabbitMQ中间件','Kafka中间件','Rpc中间件','Redis中间件','Docker','KubeSphere'),
                     // '/ai/': getAIList('AI项目'),
                 }
             },
@@ -90,6 +90,8 @@ function getProjectList(groupA,groupB,groupC,groupD,groupE) {
             collapsable: false,
             children: [
                 '',
+                'cloud-stack',
+                'cloud-interview',
             ]
         },
         {
@@ -97,6 +99,8 @@ function getProjectList(groupA,groupB,groupC,groupD,groupE) {
             collapsable: false,
             children: [
                 'devops-cicd',
+                'devops-stack',
+                'devops-interview',
             ]
         },
         {
@@ -104,6 +108,8 @@ function getProjectList(groupA,groupB,groupC,groupD,groupE) {
             collapsable: false,
             children: [
                 'athena-mall',
+                'athena-mall-stack',
+                'athena-mall-interview',
             ]
         },
         {
@@ -111,6 +117,8 @@ function getProjectList(groupA,groupB,groupC,groupD,groupE) {
             collapsable: false,
             children: [
                 'athena-admin',
+                'athena-admin-stack',
+                'athena-admin-interview',
             ]
         },
         {
@@ -135,7 +143,7 @@ function getMyAccount(groupA) {
 }
 
 // 获取博文详细资料
-function getBlogSidebar(groupA,groupB,groupC,groupD,groupE,groupF,groupG,groupH,groupI,groupJ,groupK,groupO,groupL,groupM,groupN,groupP,groupQ) {
+function getBlogSidebar(groupA,groupB,groupC,groupD,groupE,groupF,groupG,groupH,groupI,groupJ,groupK,groupO,groupL,groupM,groupN,groupP,groupQ,groupR) {
     return [
         {
             title: groupA,
@@ -183,74 +191,83 @@ function getBlogSidebar(groupA,groupB,groupC,groupD,groupE,groupF,groupG,groupH,
             title: groupG,
             collapsable: false,
             children: [
-                'jdk',
+                'vue',
+                'vuepress'
             ]
         },
         {
             title: groupH,
             collapsable: false,
             children: [
-                'spring',
+                'jdk',
             ]
         },
         {
             title: groupI,
             collapsable: false,
             children: [
-                'mybatis',
+                'spring',
             ]
         },
         {
             title: groupJ,
             collapsable: false,
             children: [
-                'juc',
+                'mybatis',
+
             ]
         },
         {
             title: groupK,
             collapsable: false,
             children: [
-                'nginx',
+                'juc',
             ]
         },
         {
             title: groupO,
             collapsable: false,
             children: [
-                'rabbitmq',
+                'nginx',
             ]
         },
         {
             title: groupL,
             collapsable: false,
             children: [
-                'kafka',
+                'rabbitmq',
             ]
         },
         {
             title: groupM,
             collapsable: false,
             children: [
-                'rpc',
+                'kafka',
             ]
         },
         {
             title: groupN,
             collapsable: false,
             children: [
-                'redis',
+                'rpc',
             ]
         },
         {
             title: groupP,
             collapsable: false,
             children: [
-                'docker',
+                'redis',
             ]
         },
         {
             title: groupQ,
+            collapsable: false,
+            children: [
+                'docker',
+            ]
+        },
+        {
+            title: groupR,
             collapsable: false,
             children: [
                 'kubesphere',

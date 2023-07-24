@@ -1,4 +1,4 @@
-# Cloud Services Platform
+# 云计算平台项目总览
 
 随着云计算的兴起，越来越多的企业和组织正在将业务迁移到云端，寻求更高效、灵活和可扩展的解决方案。在这个快速发展的领域中，
 综合性的云服务平台——Cloud Services Platform，成为了众多企业的首选。Cloud Services Platform作为一种综合性的云服务平台，
@@ -60,7 +60,6 @@ Cloud Services Platform是指一种综合性的云服务平台，它集成了各
 
 Cloud Services Platform包括了用户的前端页面展示也是页面，产品详情页面
 
-
 ### 用户服务
 
 ### 计算服务
@@ -73,6 +72,19 @@ Cloud Services Platform包括了用户的前端页面展示也是页面，产品
 
 ### 资源管理
 
+## 项目技术栈
+
+* Springboot
+* Mybatis
+* Redis
+* Mysql
+* Vue
+* Virtualization
+* VitrualNetwork
+* Containerization
+* FRPC
+* OSS Service
+* Auth Service
 
 ## 项目数据模型
 
