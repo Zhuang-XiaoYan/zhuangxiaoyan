@@ -110,6 +110,7 @@ function getProjectList(groupA,groupB,groupC,groupD,groupE) {
                 'athena-mall',
                 'athena-mall-stack',
                 'athena-mall-interview',
+                'athena-mall-api',
             ]
         },
         {
@@ -192,7 +193,8 @@ function getBlogSidebar(groupA,groupB,groupC,groupD,groupE,groupF,groupG,groupH,
             collapsable: false,
             children: [
                 'vue',
-                'vuepress'
+                'vuepress',
+                'vue-cli'
             ]
         },
         {
