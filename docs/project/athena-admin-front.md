@@ -3,7 +3,7 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Admin-Front系统前端项目
+# Vue-Admin-Front前端项目
 
 ## 项目架构
 

@@ -3,7 +3,7 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Mall-Front系统技术栈
+# Vue-Mall-Front技术栈
 
 ## 一、vue-mall组件架构
 

@@ -109,11 +109,12 @@ function getProjectList(groupA,groupB,groupC,groupD) {
             children: [
                 'athena-mall-front',
                 'athena-mall-front-stack',
-                'athena-mall-front-interview',
                 'athena-mall-front-deploy',
+                'athena-mall-front-interview',
                 'athena-mall-front-api',
                 'athena-admin-front',
                 'athena-admin-front-stack',
+                'athena-admin-front-deploy',
                 'athena-admin-front-interview',
             ]
         },
