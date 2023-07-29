@@ -93,6 +93,6 @@
 
 备注：「个人简单介绍」+ 交流，围观朋友圈，做点赞之交（备注没有自我介绍不通过哦）
 
-<img :src="$withBase('/resume/weixin.png')" alt="weixin" width="600" height="600"></a>
+<img :src="$withBase('/resume/weixin.png')" alt="weixin" width="600" height="600">
 
 <hr>

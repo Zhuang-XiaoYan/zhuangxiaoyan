@@ -1,8 +1,13 @@
-# Vue-Mall前端服务接口文档
+---
+lang: zh-CN
+sidebarDepth: 2
+---
 
-## 一、 接口公共参数设置
+# Vue-Mall-Front服务接口文档
 
-#### 1.1 代理服务器地址
+## 一、接口公共参数设置
+
+### 1.1代理服务器地址
 ```js
 const {defineConfig} = require('@vue/cli-service')
 module.exports = defineConfig({
@@ -20,64 +25,64 @@ module.exports = defineConfig({
 })
 ```
 
-#### 1.2 公共请求参数
+### 1.2公共请求参数
 
-参数名称 | 类型  |  是否必选  | 描述 |
-:---: | :---:| :---:|:-----:
-token|	String	|Y	|登录的token|
-userTempId|	String(通过uuidjs生成)|	Y	|未登陆用户生成的临时ID|
+|参数名称 | 类型  |  是否必选  | 描述 |
+|:---: | :---:| :---:|:-----:|
+|token|	String	|Y	|登录的token|
+|userTempId|	String(通过uuidjs生成)|	Y	|未登陆用户生成的临时ID|
 
 每个接口需要的Header参数值（登录接口不需要)例如：
 - token: d90aa16f24d04c7d882051412f9ec45b   后台生成
 - userTempId: b2f79046-7ee6-4dbf-88d0-725b1045460b 前台生成
 
 ## 二、级分类接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/product/getBaseCategoryList| 	GET	 |  无	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/product/getBaseCategoryList| 	GET	 |  无	  | 如下 |
 
 ```json
 {
-  code: 200,
-  message: "成功",
-  data: [
+  "code": 200,
+  "message": "成功",
+  "data": [
     {
-      categoryChild: [
+      "categoryChild": [
         {
-          categoryChild: [
+          "categoryChild": [
             {
-              categoryName: "电子书",
-              categoryId: 1,
+              "categoryName": "电子书",
+              "categoryId": 1
             }
           ],
-          categoryName: "电子书刊",
-          categoryId: 1,
+          "categoryName": "电子书刊",
+          "categoryId": 1
         }
       ],
-      categoryName: "图书、音像、电子书刊",
-      categoryId: 1
+      "categoryName": "图书、音像、电子书刊",
+      "categoryId": 1
     }
   ],
-  ok: true,
+  "ok": true
 }
 ```
 
 ## 三、搜索商品接口
 
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/list| 	POST	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/list| 	POST	 | 如下	  | 如下 |
 
 请求参数说明
 
-参数名称 | 参数类型  | 是否必选 |  描述  |
-:---: |:-----:|:----:|:----:
-category1Id| 	string	 |  N	  | 一级分类ID |
-category2Id| 	string	 |  N	  | 二级分类ID |
-category3Id| 	string	 |  N	  | 三级分类ID	 |
-categoryName| 	string	 |  N	  | 分类名称 |
-keyword| 	string	 |  N	  | 搜索关键字 |
-props| 	Array	 |  N	  | 商品属性的数组: ["属性ID:属性值:属性名"] |
+|参数名称 | 参数类型  | 是否必选 |  描述  |
+|:---: |:-----:|:----:|:----:|
+|category1Id| 	string	 |  N	  | 一级分类ID |
+|category2Id| 	string	 |  N	  | 二级分类ID |
+|category3Id| 	string	 |  N	  | 三级分类ID	 |
+|categoryName| 	string	 |  N	  | 分类名称 |
+|keyword| 	string	 |  N	  | 搜索关键字 |
+|props| 	Array	 |  N	  | 商品属性的数组: ["属性ID:属性值:属性名"] |
 
 请求参数示例
 ```json
@@ -103,7 +108,7 @@ props| 	Array	 |  N	  | 商品属性的数组: ["属性ID:属性值:属性名"] 
             {
                 "tmId": 1,
                 "tmName": "苹果"
-            },
+            }
         ],
         "attrsList": [
             {
@@ -113,7 +118,7 @@ props| 	Array	 |  N	  | 商品属性的数组: ["属性ID:属性值:属性名"] 
                     "2800-4499"
                 ],
                 "attrName": "价格"
-            },
+            }
         ],
         "goodsList": [
             {
@@ -132,8 +137,7 @@ props| 	Array	 |  N	  | 商品属性的数组: ["属性ID:属性值:属性名"] 
                 "category3Name": null,
                 "hotScore": 0,
                 "attrs": null
-            },
-            …
+            }
         ],
         "total": 8,
         "pageSize": 2,
@@ -146,15 +150,15 @@ props| 	Array	 |  N	  | 商品属性的数组: ["属性ID:属性值:属性名"] 
 
 ## 四、获取商品详情接口
 
-请求地址 | 请求方式  |      请求参数      | 返回示例 |
-:---: |:-----:|:--------------:|:----:
-/api/item/{skuId}| 	GET	 | skuId(string)	 | 如下 |
+|请求地址 | 请求方式  |      请求参数      | 返回示例 |
+|:---: |:-----:|:--------------:|:----:|
+|/api/item/{skuId}| 	GET	 | skuId(string)	 | 如下 |
 
 请求参数说明
 
-参数名称 | 参数类型  | 是否必选 |  描述  |
-:---: |:-----:|:----:|:----:
-skuId| 	string	 |  Y	  | 商品ID |
+|参数名称 | 参数类型  | 是否必选 |  描述  |
+|:---: |:-----:|:----:|:----:|
+|skuId| 	string	 |  Y	  | 商品ID |
 
 
 请求参数示例
@@ -266,9 +270,9 @@ http://sph-h5-api.atguigu.cn/api/item/13
 ```
 
 ## 五、获取购物车列表接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/cart/cartlist| 	GET	 |  无   | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/cart/cartlist| 	GET	 |  无   | 如下 |
 
 参数返回实例
 
@@ -305,16 +309,16 @@ http://sph-h5-api.atguigu.cn/api/item/13
 ```
 
 ## 六、添加到购物车接口
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/cart/addToCart/{skuId}/{skuNum}| 	POST	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/cart/addToCart/{skuId}/{skuNum}| 	POST	 | 如下	  | 如下 |
 
 请求参数说明
 
-参数名称 | 参数类型  | 是否必选 |  描述  |
-:---: |:-----:|:----:|:----:
-skuId| 	string	 |  Y	  | 商品Id |
-skuNum| 	string	 |  Y	  | 商品数量 |
+|参数名称 | 参数类型  | 是否必选 |  描述  |
+|:---: |:-----:|:----:|:----:|
+|skuId| 	string	 |  Y	  | 商品Id |
+|skuNum| 	string	 |  Y	  | 商品数量 |
 
 
 ```text
@@ -335,16 +339,16 @@ http://sph-h5-api.atguigu.cn/api/cart/addToCart/3/-2
 ```
 
 ## 七、切换商品选中状态接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/cart/checkCart/{skuId}/{isChecked}| 	GET	 | 如下	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/cart/checkCart/{skuId}/{isChecked}| 	GET	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |        描述         |
-:---: |:-----:|:----:|:-----------------:
-skuId| 	string	 |  Y	  |       商品Id        |
-isChecked| 	string	 |  Y	  | 是否被选中0 代表曲线，1代表选中 |
+|参数名称 | 参数类型  | 是否必选 |        描述         |
+|:---: |:-----:|:----:|:-----------------:|
+|skuId| 	string	 |  Y	  |       商品Id        |
+|isChecked| 	string	 |  Y	  | 是否被选中0 代表曲线，1代表选中 |
 
 返回参数示例
 ```json
@@ -357,15 +361,15 @@ isChecked| 	string	 |  Y	  | 是否被选中0 代表曲线，1代表选中 |
 ```
 
 ## 八、删除购物车商品接口
-请求地址 |   请求方式   | 请求参数 | 返回示例 |
-:---: |:--------:|:----:|:----:
-/api/cart/deleteCart/{skudId}| 	DELETE	 | 如下	  | 如下 |
+|请求地址 |   请求方式   | 请求参数 | 返回示例 |
+|:---: |:--------:|:----:|:----:|
+|/api/cart/deleteCart/{skudId}| 	DELETE	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |        描述         |
-:---: |:-----:|:----:|:-----------------:
-skuId| 	string	 |  Y	  |       商品Id        |
+|参数名称 | 参数类型  | 是否必选 |        描述         |
+|:---: |:-----:|:----:|:-----------------:|
+|skuId| 	string	 |  Y	  |       商品Id        |
 
 返回参数示例
 ```json
@@ -378,9 +382,9 @@ skuId| 	string	 |  Y	  |       商品Id        |
 ```
 
 ## 九、获取订单交易页信息接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/order/auth/trade| 	GET	 |  无	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/order/auth/trade| 	GET	 |  无	  | 如下 |
 
 返回参数示例
 
@@ -420,17 +424,16 @@ skuId| 	string	 |  Y	  |       商品Id        |
 ```
 
 ## 十、获取我的订单列表接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/order/auth/{page}/{limit}| 	GET	 | 如下	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/order/auth/{page}/{limit}| 	GET	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |    描述    |
-:---: |:-----:|:----:|:--------:
-page| 	string	 |  Y	  |    页码    |
-limit| 	string	 |  Y	  | 每一页显示的数量 |
-
+|参数名称 | 参数类型  | 是否必选 |    描述    |
+|:---: |:-----:|:----:|:--------:|
+|page| 	string	 |  Y	  |    页码    |
+|limit| 	string	 |  Y	  | 每一页显示的数量 |
 
 返回参数示例
 
@@ -469,12 +472,10 @@ limit| 	string	 |  Y	  | 每一页显示的数量 |
             "skuNum": 1,
             "hasStock": null
           }
-          …
         ],
         "orderStatusName": "未支付",
         "wareId": null
       }
-      …
     ],
     "total": 41,
     "size": 2,
@@ -487,21 +488,21 @@ limit| 	string	 |  Y	  | 每一页显示的数量 |
 
 ## 十一、提交订单接口
 
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/order/auth/submitOrder?tradeNo={tradeNo}| 	POST	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/order/auth/submitOrder?tradeNo={tradeNo}| 	POST	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |    描述    |
-:---: |:-----:|:----:|:--------:
-traderNo| 	string	 |  Y	  |    交易编号(拼接在路径中)    |
-consignee| 	string	 |  Y	  | 收件人姓名 |
-consigneeTel| 	string	 |  Y	  | 收件人电话 |
-deliveryAddress| 	string	 |  Y	  | 收件地址 |
-paymentWay| 	string	 |  Y	  | 支付方式(ONLINE代表在线) |
-orderComment| 	string	 |  Y	  | 订单备注 |
-orderDetailList| 	string	 |  Y	  | 存储多个商品对象的数组 |
+|参数名称 | 参数类型  | 是否必选 |    描述    |
+|:---: |:-----:|:----:|:--------:|
+|traderNo| 	string	 |  Y	  |    交易编号(拼接在路径中)    |
+|consignee| 	string	 |  Y	  | 收件人姓名 |
+|consigneeTel| 	string	 |  Y	  | 收件人电话 |
+|deliveryAddress| 	string	 |  Y	  | 收件地址 |
+|paymentWay| 	string	 |  Y	  | 支付方式(ONLINE代表在线) |
+|orderComment| 	string	 |  Y	  | 订单备注 |
+|orderDetailList| 	string	 |  Y	  | 存储多个商品对象的数组 |
 
 请求参数示例
 
@@ -542,21 +543,21 @@ orderDetailList| 	string	 |  Y	  | 存储多个商品对象的数组 |
 {
   "code": 200,
   "message": "成功",
-  "data": SN1234251353,//订单号
+  "data": "SN1234251353",
   "ok": true
 }
 ```
 
 ## 十二、获取订单支付信息接口
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/payment/weixin/createnative/{orderId}| 	GET	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/payment/weixin/createnative/{orderId}| 	GET	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |  描述   |
-:---: |:-----:|:----:|:-----:
-orderId| 	string	 |  Y	  | 支付订单号 |
+|参数名称 | 参数类型  | 是否必选 |  描述   |
+|:---: |:-----:|:----:|:-----:|
+|orderId| 	string	 |  Y	  | 支付订单号 |
 
 返回参数示例
 ```json
@@ -574,15 +575,15 @@ orderId| 	string	 |  Y	  | 支付订单号 |
 ```
 
 ## 十三、查询支付订单状态接口
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/payment/weixin/queryPayStatus/{orderId}| 	GTET	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/payment/weixin/queryPayStatus/{orderId}| 	GTET	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |  描述   |
-:---: |:-----:|:----:|:-----:
-orderId| 	string	 |  Y	  | 支付订单号 |
+|参数名称 | 参数类型  | 是否必选 |  描述   |
+|:---: |:-----:|:----:|:-----:|
+|orderId| 	string	 |  Y	  | 支付订单号 |
 
 返回参数示例
 ```json
@@ -595,15 +596,16 @@ orderId| 	string	 |  Y	  | 支付订单号 |
 ```
 
 ## 十四、获取注册验证码接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/user/passport/sendCode/{phone}| 	GET	 | 如下	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/user/passport/sendCode/{phone}| 	GET	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |   描述    |
-:---: |:-----:|:----:|:-------:
-phone| 	string	 |  Y	  | 注册的电话号码 |
+| 参数名称  | 参数类型 | 是否必选  | 描述 |
+|:-----:|:--------:| :-----:|:----:|
+| phone |  string  | $1600 | Y  | 注册的电话号码 |
+
 
 返回参数示例
 ```json
@@ -617,16 +619,16 @@ phone| 	string	 |  Y	  | 注册的电话号码 |
 
 ## 十五、用户登陆接口
 
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/user/passport/login| 	POST	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/user/passport/login| 	POST	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |   描述    |
-:---: |:-----:|:----:|:-------:
-phone| 	string	 |  Y	  | 注册的电话号码 |
-password| 	string	 |  Y	  |  注册的密码  |
+|参数名称 | 参数类型  | 是否必选 |   描述    |
+|:---: |:-----:|:----:|:-------:|
+|phone| 	string	 |  Y	  | 注册的电话号码 |
+|password| 	string	 |  Y	  |  注册的密码  |
 
 返回参数示例
 
@@ -653,17 +655,17 @@ password| 	string	 |  Y	  |  注册的密码  |
 ```
 
 ## 十六、注册用户接口
-请求地址 |  请求方式  | 请求参数 | 返回示例 |
-:---: |:------:|:----:|:----:
-/api/user/passport/regeiser| 	POST	 | 如下	  | 如下 |
+|请求地址 |  请求方式  | 请求参数 | 返回示例 |
+|:---: |:------:|:----:|:----:|
+|/api/user/passport/regeiser| 	POST	 | 如下	  | 如下 |
 
 请求参数
 
-参数名称 | 参数类型  | 是否必选 |   描述    |
-:---: |:-----:|:----:|:-------:
-phone| 	string	 |  Y	  | 注册的电话号码 |
-password| 	string	 |  Y	  |   密码    |
-code| 	string	 |  Y	  |   验证码   |
+| 参数名称 | 参数类型  | 是否必选 |   描述    |
+| ---: |:-----:|:----:|:-------:|
+| phone| 	string	 |  Y	  | 注册的电话号码 |
+| password| 	string	 |  Y	  |   密码    |
+| code| 	string	 |  Y	  |   验证码   |
 
 返回参数示例
 ```json
@@ -676,9 +678,9 @@ code| 	string	 |  Y	  |   验证码   |
 ```
 
 ## 十七、退出登陆接口
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/user/passport/logout| 	GET	 |  无	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/user/passport/logout| 	GET	 |  无	  | 如下 |
 
 返回参数示例
 ```json
@@ -691,9 +693,9 @@ code| 	string	 |  Y	  |   验证码   |
 ```
 
 ## 十八、获取用户地址
-请求地址 | 请求方式  | 请求参数 | 返回示例 |
-:---: |:-----:|:----:|:----:
-/api/user/userAddress/auth/findUserAddressList| 	GET	 |  无	  | 如下 |
+|请求地址 | 请求方式  | 请求参数 | 返回示例 |
+|:---: |:-----:|:----:|:----:|
+|/api/user/userAddress/auth/findUserAddressList| 	GET	 |  无	  | 如下 |
 
 返回参数示例
 
@@ -703,8 +705,8 @@ code| 	string	 |  Y	  |   验证码   |
   "message": "success",
   "data": {
     "address": {
-      "address1":'上海',
-      "address2":'北京',
+      "address1":"上海",
+      "address2":"北京"
     }
   },
   "ok": false

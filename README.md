@@ -12,6 +12,7 @@
 
 # 三、实战项目
 
+https://github.com/newbee-ltd
 
 # 四、AI项目
 
@@ -32,6 +33,8 @@
 
 
 # 博文参考
-
+- https://github.com/zhoubichuan
+- https://juejin.cn/post/7109286956076695560
+- https://zhoubichuan.github.io/web-vue/base/engine/1.index.html
 - https://www.vuepress.cn/config/#palette-styl
 - https://blog.csdn.net/xiaoxianer321/article/details/119548202
