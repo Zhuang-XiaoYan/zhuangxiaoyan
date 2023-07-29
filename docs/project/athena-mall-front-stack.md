@@ -1832,7 +1832,7 @@ VeeValidate.Validator.extend('agree',{
 })
 ```
 
-## 十七、vue的-cli的使用与配置
+## 十七、vue-cli的使用与配置
 
 新创建的 vue 项目没有这个文件，需要自己在根目录创建 vue.config.js
 

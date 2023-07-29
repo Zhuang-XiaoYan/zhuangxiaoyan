@@ -111,8 +111,9 @@ docker build . -t vue-mall:1.0.0
 ```
 
 ## 六、拉取镜像
+
 ```shell
-docker pull registry.cn-hangzhou.aliyuncs.com/athena-zhaungxiaoyan/athena-mall-product:
+docker pull registry.cn-hangzhou.aliyuncs.com/athena-zhaungxiaoyan/athena-mall-product:1.0.0
 ```
 
 <img :src="$withBase('/project/athena-mall/docker-registery.png')" alt="registery">
@@ -120,7 +121,7 @@ docker pull registry.cn-hangzhou.aliyuncs.com/athena-zhaungxiaoyan/athena-mall-p
 ## 七、运行容器
 
 ```shell
-docker run --privileged=true --restart=always -nname==vue-mall -d -p 80:80  vue-mall:1.0.0 
+docker run --privileged=true --restart=always -name==vue-mall -d -p 80:80  vue-mall:1.0.0 
 ```
 
 ## 八、访问服务

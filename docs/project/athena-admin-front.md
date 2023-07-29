@@ -1,4 +1,9 @@
-# Admin管理系统项目总览
+---
+lang: zh-CN
+sidebarDepth: 2
+---
+
+# Vue-Admin-Front系统前端项目
 
 ## 项目架构
 
@@ -8,14 +13,8 @@
 
 ## 项目技术栈
 
-* Springboot
-* Mybatis
-* Redis
-* Mysql
-* Vue
 
 ## 项目数据模型
-
 
 
 ## 项目开发总结
