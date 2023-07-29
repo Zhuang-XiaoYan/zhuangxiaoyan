@@ -3,7 +3,7 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Mall-Front服务接口文档
+# Athena-Mall-Front服务接口文档
 
 ## 一、接口公共参数设置
 

@@ -3,7 +3,7 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Admin-Front技术栈
+# Athena-Admin-Front技术栈
 
 
 

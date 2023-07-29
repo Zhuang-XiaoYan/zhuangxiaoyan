@@ -3,9 +3,9 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Mall-Front前端项目
+# Athena-Mall-Front前端项目
 
-## 一、vue-mall-front项目简介
+## 一、athena-mall-front项目简介
 
 vue-mall-front项目为在线电商Web App (SPA)，项目包括首页, 搜索列表, 商品详情, 购物车, 订单, 支付, 用户登陆/注册等多个子模块，
 使用Vue全家桶+ES6+Webpack+Axios等前端最新最热的技术，采用模块化、组件化、工程化的模式开发。
@@ -13,7 +13,7 @@ vue-mall-front项目为在线电商Web App (SPA)，项目包括首页, 搜索列
 
 <img :src="$withBase('/project/athena-mall/vue-mall.png')" alt="vue-mall">
 
-## 二、vue-mall-front前序
+## 二、athena-mall-front前序
 
 ### 2.1 vue项目简介
 
@@ -30,7 +30,7 @@ vue-mall-front项目为在线电商Web App (SPA)，项目包括首页, 搜索列
 5. Vue Dev-Tools Vue 在浏览器下的调试工具。写 vue 必备的一个浏览器插件，能大大的提高你调试的效率。
 6. Vue CLI 是官方提供的一个 vue 项目脚手架，本项目也是基于它进行构建的。它帮你封装了大量的 webpack、babel 等其它配置，让你能花更少的精力在搭建环境上，从而能更专注于页面代码的编写。不过所有的脚手架都是针对大部分情况的，所以一些特殊的需求还是需要自己进行配置。建议先阅读一遍它的文档，对一些配置有一些基本的了解。
 
-## 三、vue-mall-front项目目录
+## 三、athena-mall-front项目目录
 
 ```shell
 ├──vue-mall(整个项目名称)
@@ -59,7 +59,7 @@ vue-mall-front项目为在线电商Web App (SPA)，项目包括首页, 搜索列
 |──────vue.config.js(vue的配置文件)
 ```
 
-## 四、vue-mall-front开发与部署
+## 四、athena-mall-front开发与部署
 
 ### 4.1 vue-mall开发配置
 
@@ -91,7 +91,7 @@ npm run build
 另外因为 node-sass 是依赖 python环境的，如果你之前没有安装和配置过的话，需要自行查看一下相关安装教程。
 :::
 
-### 4.2 vue-mall生产部署
+### 4.2 athena-mall-front生产部署
 
 **拉取镜像**
 ```shell
@@ -102,7 +102,7 @@ docker pull registry.cn-hangzhou.aliyuncs.com/athena-zhaungxiaoyan/athena-mall-p
 docker run --privileged=true --restart=always -nname==vue-mall -d -p 80:80  vue-mall:1.0.0 
 ```
 
-## 五、vue-mall-front项目功能
+## 五、athena-mall-front项目功能
      
 ### 5.1 home首页
 

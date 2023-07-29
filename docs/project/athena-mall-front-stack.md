@@ -3,9 +3,9 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Mall-Front技术栈
+# Athena-Mall-Front技术栈
 
-## 一、vue-mall组件架构
+## 一、athena-mall-front组件架构
 
 <img :src="$withBase('/project/athena-mall/vue-stack.png')" alt="stack">
 

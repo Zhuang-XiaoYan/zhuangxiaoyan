@@ -3,7 +3,7 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Admin-Front前端项目
+# Athena-Admin-Front前端项目
 
 ## 项目架构
 

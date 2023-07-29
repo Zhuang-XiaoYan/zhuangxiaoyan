@@ -3,7 +3,7 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# Vue-Mall-Front容器化部署文档
+# Athena-Mall-Front容器化部署文档
 
 ## 一、安装Docker服务
 
