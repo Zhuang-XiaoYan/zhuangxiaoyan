@@ -27,7 +27,7 @@ module.exports = {
                 nav: getNavMenu(),
                 sidebar: {
                     '/resume/': getResumeSidebar(),
-                    '/project/': getProjectList('云计算平台项目','DevOps系统项目','Mall电商项目','大数据库项目'),
+                    '/project/': getProjectList('Cloud-Platform项目','DevOps-Platform系统项目','Mall电商项目','大数据库项目'),
                     '/blog/': getBlogSidebar('数据结构与算法','数据库','计算机网络','操作系统','Java语言','Go语言','Vue全家桶','JDK源码','Spring全家桶','Mybatis框架','JUC并发编程','Nginx框架','RabbitMQ中间件','Kafka中间件','Rpc中间件','Redis中间件','Docker','KubeSphere'),
                     // '/ai/': getAIList('AI项目'),
                 }
@@ -107,6 +107,10 @@ function getProjectList(groupA,groupB,groupC,groupD) {
             title: groupC,
             collapsable: false,
             children: [
+                'athena-mall-cloud',
+                'athena-mall-cloud-stack',
+                'athena-mall-cloud-deploy',
+                'athena-mall-cloud-interview',
                 'athena-mall-front',
                 'athena-mall-front-stack',
                 'athena-mall-front-deploy',

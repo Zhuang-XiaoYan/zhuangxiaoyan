@@ -1,4 +1,9 @@
-# 云计算平台面试总结
+---
+lang: zh-CN
+sidebarDepth: 2
+---
+
+# Cloud-Platform面试总结
 
 ## 虚拟化计算(Virtual Computer)
 

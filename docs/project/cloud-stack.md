@@ -1,4 +1,9 @@
-# 云计算平台技术栈
+---
+lang: zh-CN
+sidebarDepth: 2
+---
+
+# Cloud-Platform技术栈
 
 随着云计算技术的发展及其应用的普及和深入，云平台资源的高效利用成为越来越重要的问题，而服务器虚拟化技术是云计算实现资源有效利用的关键技术。 
 云计算的云端系统， 其实质上就是一个大型的分布式系统。 虚拟化通过在一个物理平台上虚拟出更多的虚拟平台， 
@@ -57,15 +62,15 @@
 虚拟机监控器运行的环境，也就是真实的物理平台，称之为宿主机(host machine)。而虚拟出来的平台通常称为客户机(guest machine)，
 里面运行的系统对应地也称为客户机操作系统，如下图：
 
-<img :src="$withBase('/project/hybride-cloud/virtual-service.png')" alt="virtual-service">
+<img :src="$withBase('/project/cloud/virtual-service.png')" alt="virtual-service">
 
 ## 计算与内存虚拟化
 
 针对CPU和内存资源虚拟化技术。计算虚拟化通过虚拟化管理程序（Hypervisor或VMM）将物理服务器的硬件资源与上层应用进行解耦，形成统一的计算资源池，
 然后可弹性分配给逻辑上隔离的虚拟机共享使用。如图基于VMM所在位置与虚拟化范围可以分三种类型。
 
-<img :src="$withBase('/project/hybride-cloud/vvm.webp')" alt="vmm">
-<img :src="$withBase('/project/hybride-cloud/vvm2.webp')" alt="vmm2">
+<img :src="$withBase('/project/cloud/vvm.webp')" alt="vmm">
+<img :src="$withBase('/project/cloud/vvm2.webp')" alt="vmm2">
 
 容器（应用级）：容器是一种更加轻量的应用级虚拟化技术，将应用的可执行文件及其所需的运行时环境与依赖库打包，实现一次构建，到处运行的目标。
 相比虚拟化，容器技术多了容器引擎层（如Docker），但上层应用无需与Guest OS绑定，可以实现秒级部署、跨平台迁移，灵活的资源分配，弹性调度管理等优势。
@@ -78,7 +83,7 @@ KVM是基于虚拟化扩展（Intel VT 或者 AMD-V）的 X86 硬件的开源的
 但是，KVM本身不执行任何硬件模拟，需要客户空间程序通过/dev/kvm 接口设置一个客户机虚拟服务器的地址空间，向它提供模拟的 I/O，
 并将它的视频显示映射回宿主的显示屏。目前这个应用程序是QEMU。
 
-<img :src="$withBase('/project/hybride-cloud/kvm.webp')" alt="kvm">
+<img :src="$withBase('/project/cloud/kvm.webp')" alt="kvm">
 
 - Guest：客户机系统，包括CPU（vCPU）、内存、驱动（Console、网卡、I/O 设备驱动等），被 KVM 置于一种受限制的 CPU 模式下运行。
 - KVM：运行在内核空间，提供CPU 和内存的虚级化，以及客户机的 I/O 拦截。Guest 的 I/O 被 KVM 拦截后，交给 QEMU 处理。
@@ -94,14 +99,14 @@ KVM依赖的Intel/AMD处理器的各种虚拟化扩展：
 除了CPU虚拟化，另一个关键是内存虚拟化，通过内存虚拟化共享物理系统内存，动态分配给虚拟机。虚拟机的内存虚拟化很象现在的操作系统支持的虚拟内存方式，
 应用程序看到邻近的内存地址空间，这个地址空间无需和下面的物理机器内存直接对应，操作系统保持着虚拟页到物理页的映射。
 
-<img :src="$withBase('/project/hybride-cloud/vmemory.jpg')" alt="vmemory">
+<img :src="$withBase('/project/cloud/vmemory.jpg')" alt="vmemory">
 
 现在所有的 x86 CPU都包括了一个称为内存管理的模块MMU（Memory Management Unit）和 TLB(Translation Lookaside Buffer)， 通过MMU和TLB来优化虚拟内存的性能。
 KVM中，虚机的物理内存即为 qemu-kvm 进程所占用的内存空间。KVM 使用 CPU 辅助的内存虚拟化方式。在 Intel 和 AMD 平台，其内存虚拟化的实现方式分别为：
 AMD 平台上的 NPT （Nested Page Tables） 技术Intel 平台上的 EPT （Extended Page Tables）技术
 EPT 和 NPT采用类似的原理，都是作为 CPU 中新的一层，用来将客户机的物理地址翻译为主机的物理地址。
 
-<img :src="$withBase('/project/hybride-cloud/EPT.webp')" alt="EPT">
+<img :src="$withBase('/project/cloud/EPT.webp')" alt="EPT">
 
 EPT的好处是，它的两阶段记忆体转换，特点就是将 Guest Physical Address → System Physical Address，VMM不用再保留一份 SPT (Shadow Page Table)，
 以及以往还得经过 SPT 这个转换过程。除了降低各部虚拟机器在切换时所造成的效能损耗外，硬体指令集也比虚拟化软体处理来得可靠与稳定。
@@ -111,11 +116,11 @@ EPT的好处是，它的两阶段记忆体转换，特点就是将 Guest Physica
 ## 网络虚拟化
 针对网络链路资源虚拟化技术。
 
-<img :src="$withBase('/project/hybride-cloud/vnetwork.webp')" alt="vnetwork">
+<img :src="$withBase('/project/cloud/vnetwork.webp')" alt="vnetwork">
 
 网络虚拟化 (NV) 是指将传统上在硬件中交付的网络资源抽象化到软件中。NV 可以将多个物理网络整合为一个基于软件的虚拟网络，或者可以将一个物理网络划分为多个隔离和独立的虚拟网络。
 
-<img :src="$withBase('/project/hybride-cloud/vnetwork2.jpg')" alt="vnetwork2">
+<img :src="$withBase('/project/cloud/vnetwork2.jpg')" alt="vnetwork2">
 
 传统网络
 在传统网络环境中，一台物理主机包含一个或多个网卡（NIC），要实现与其他物理主机之间的通信，需要通过自身的 NIC 连接到外部的网络设施，
@@ -123,7 +128,7 @@ EPT的好处是，它的两阶段记忆体转换，特点就是将 Guest Physica
 1. 是某些应用大部分情况可能处于空闲状态，
 2. 是当应用增多的时候，只能通过增加物理设备来解决扩展性问题。不管怎么样，这种架构都会对物理资源造成极大的浪费。
 
-<img :src="$withBase('/project/hybride-cloud/vnetwork3.jpg')" alt="vnetwork3">
+<img :src="$withBase('/project/cloud/vnetwork3.jpg')" alt="vnetwork3">
 
 其中虚拟机与虚拟机之间的通信，由虚拟交换机完成，虚拟网卡和虚拟交换机之间的链路也是虚拟的链路，整个主机内部构成了一个虚拟的网络，如果虚拟机之间涉及到三层的网络包转发，则又由另外一个角色——虚拟路由器来完成。
 
@@ -138,18 +143,14 @@ Open vSwitch 是在开源Apache2许可下获得许可的多层软件交换机。
 - vswitchd是一个守护进程，是ovs的管理和控制服务，通过unix socket将配置信息保存到ovsdb，并通过netlink和内核模块交互。
 - ovsdb则是ovs的数据库，保存了ovs配置信息。
 
-<img :src="$withBase('/project/hybride-cloud/vnet.webp')" alt="vnet">
-
-
-
-
+<img :src="$withBase('/project/cloud/vnet.webp')" alt="vnet">
 
 
 ## IO虚拟化
 
 针对IO资源虚拟化技术。I/O虚拟化（Input/output virtualization，简称IOV）是虚拟化的一种新形式，是来自物理连接或物理运输上层协议的抽象，让物理服务器和虚拟机可以共享I/O资源。
 
-<img :src="$withBase('/project/hybride-cloud/vio.jpg')" alt="vio">
+<img :src="$withBase('/project/cloud/vio.jpg')" alt="vio">
 
 I/O 虚拟化方案的选择：
 I/O设备尽量使用准虚拟化（virtio 和 vhost_net）

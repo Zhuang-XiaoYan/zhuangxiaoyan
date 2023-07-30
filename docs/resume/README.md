@@ -39,25 +39,35 @@
 
 ## 项目经历
 
-1. DELL-EMC &emsp;&emsp;&emsp;&emsp; 2021.09-2022.10 &emsp;&emsp;&emsp; 云计算系统开发 &emsp;&emsp;&emsp;&emsp; 后端开发工程师
-    * 具体功能
-    * 运用了那些技术，技术难点是
-    * 效果如何
-    * demo演示地址，github地址
+1. DELL-EMC &emsp;&emsp;&emsp;&emsp; 2021.09-2022.10 &emsp;&emsp;&emsp; Cloud-Platform系统 &emsp;&emsp;&emsp;&emsp; 后端开发工程师
+    * Cloud-Platform集成了各种基础设施和应用服务,提供统一的管理和部署环境,管理和运行云上的应用程序、存储数据、进行分析和监控等操作。
+    * go微服务、mysql、redis、Kubernetes
+    * [Cloud-Platfrom设计文档](https://zhuang-xiaoyan.github.io/zhuangxiaoyan/project/)
 
-2. DELL-EMC &emsp;&emsp;&emsp;&emsp; 2021.09-2022.10 &emsp;&emsp;&emsp; CICD系统开发  &emsp;&emsp;&emsp;&emsp;&emsp; 后端开发工程师
-   * 具体功能
-   * 运用了那些技术，技术难点是
-   * 效果如何
-   * demo演示地址，github地址
+2. DELL-EMC &emsp;&emsp;&emsp;&emsp; 2021.09-2022.10 &emsp;&emsp;&emsp; Devops-Platform系统  &emsp;&emsp;&emsp;&emsp;后端开发工程师
+   * DevOps-Platform是多角色紧密合作的开发者平台，通过包括敏捷项目管理、代码管理、CICD、自动化测试等工具，提升软件生产过程中团队协作。
+   * go微服务、mysql、redis、Jenkins、Docker、Kubernetes
+   * [Devops-Platfrom设计文档](https://zhuang-xiaoyan.github.io/zhuangxiaoyan/project/devops-cicd.html)
 
-3. 个人开源项目 &emsp;&emsp;&emsp; 2021.09-2023.06 &emsp;&emsp;&emsp; Athena-Mall系统 &emsp;&emsp;&emsp;&emsp;后端开发工程师
-   * 具体功能
-   * 运用了那些技术，技术难点是
-   * 效果如何
-   * demo演示地址，github地址
+3. 个人开源项目 &emsp;&emsp;&emsp; 2021.09-2023.06 &emsp;&emsp;&emsp; Athena-Mall系统 &emsp;&emsp;&emsp;&emsp;&emsp; 后端开发工程师
+   * 3.1 Athena-Mall-Cloud项目
+     * vue-mall-cloud项目为在线电商后端微服务，系统包括了首页, 搜索, 商品详情, 购物车, 订单, 支付, 用户登陆/注册、个人中心互功能。
+     * Spring-cloud、mysql、nacos、nginx、redis、micro-service、docker、kubesphere
+     * [vue-mall-cloud设计文档](https://zhuang-xiaoyan.github.io/zhuangxiaoyan/project/athena-mall-cloud.html)
+     * [vue-mall-cloud仓库](https://github.com/Zhuang-XiaoYan/Athena-Mall-Cloud)
+   * 3.2 Athena-Mall-front项目
+     * athena-mall-front项目为在线电商前端服务，服务包括首页, 搜索, 商品详情, 购物车, 订单, 支付, 用户登陆/注册、个人中心交互功能。
+     * Vue、vue-router、vuex、Webpack、Axios
+     * [vue-mall-front设计文档](https://zhuang-xiaoyan.github.io/zhuangxiaoyan/project/athena-mall-front.html)
+     * [vue-mall-front仓库](https://github.com/Zhuang-XiaoYan/Athena-Mall-Front)
+   * 3.3 Athena-Mall-Admin项目
+     * athena-mall-admin项目为在线电商管理前端服务，服务包括首页, 搜索, 商品详情, 购物车, 订单, 支付, 用户登陆/注册、个人中心交互功能。
+     * Vue、vue-router、vuex、Webpack、Axios
+     * [vue-mall-admin设计文档](https://zhuang-xiaoyan.github.io/zhuangxiaoyan/project/athena-admin-front.html)
+     * [vue-mall-admin仓库](https://github.com/Zhuang-XiaoYan/Athena-Mall-Admin)
+   
 
-4. 个人开源项目 &emsp;&emsp;&emsp; 2021.09-2022.10 &emsp;&emsp;&emsp; Athena-Admin系统 &emsp;&emsp;&emsp;后端开发工程师
+4. 个人开源项目 &emsp;&emsp;&emsp; 2021.09-2022.10 &emsp;&emsp;&emsp; Athena-Recommend系统 &emsp;&emsp;&emsp;后端开发工程师
    * 具体功能
    * 运用了那些技术，技术难点是
    * 效果如何
