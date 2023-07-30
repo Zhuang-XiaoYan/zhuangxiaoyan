@@ -12,7 +12,6 @@
 
 # 三、实战项目
 
-https://github.com/newbee-ltd
 
 # 四、AI项目
 

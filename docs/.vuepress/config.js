@@ -29,6 +29,7 @@ module.exports = {
                     '/resume/': getResumeSidebar(),
                     '/project/': getProjectList('Cloud-Platform项目','DevOps-Platform系统项目','Mall电商项目','大数据库项目'),
                     '/blog/': getBlogSidebar('数据结构与算法','数据库','计算机网络','操作系统','Java语言','Go语言','Vue全家桶','JDK源码','Spring全家桶','Mybatis框架','JUC并发编程','Nginx框架','RabbitMQ中间件','Kafka中间件','Rpc中间件','Redis中间件','Docker','KubeSphere'),
+                    '/interview/': getInterviewList('面试场景方案设计'),
                     // '/ai/': getAIList('AI项目'),
                 }
             },
@@ -56,6 +57,11 @@ function getNavMenu() {
             text: '实战项目',
             link: '/project/',
             ariaLabel: '项目',
+        },
+        {
+            text: '面试项目',
+            link: '/interview/',
+            ariaLabel: '面试总结',
         },
         {
             text: 'AI项目',
@@ -140,6 +146,23 @@ function getMyAccount(groupA) {
         {text: '庄小焱-Github', link: 'https://github.com/Zhuang-XiaoYan'},
         {text: '庄小焱-Gitee', link: 'https://gitee.com/xjl2462612540'},
         {text: '庄小焱-CSDN', link: 'https://blog.csdn.net/weixin_41605937'},
+    ]
+}
+
+function getInterviewList(groupA) {
+    return [
+        {
+            title: groupA,
+            collapsable: false,
+            children: [
+                '',
+                'database-backup',
+                'database-query',
+                'database-split-table',
+                'idempotent',
+                'distributed-id',
+            ]
+        },
     ]
 }
 
