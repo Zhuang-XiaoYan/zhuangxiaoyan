@@ -163,7 +163,7 @@ function getInterviewList(groupA) {
                 'distributed-id',
                 'distributed-lock',
                 'distributed-transaction',
-                'spring-getway',
+                'spring-getway.md',
             ]
         },
     ]
@@ -235,6 +235,7 @@ function getBlogSidebar(groupA,groupB,groupC,groupD,groupE,groupF,groupG,groupH,
             collapsable: false,
             children: [
                 'spring',
+                'spring-getway',
             ]
         },
         {
