@@ -3,4 +3,4 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# 数据一致性方案设计
+# 分布式事务原理与设计

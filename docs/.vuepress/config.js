@@ -161,6 +161,9 @@ function getInterviewList(groupA) {
                 'database-split-table',
                 'idempotent',
                 'distributed-id',
+                'distributed-lock',
+                'distributed-transaction',
+                'spring-getway',
             ]
         },
     ]

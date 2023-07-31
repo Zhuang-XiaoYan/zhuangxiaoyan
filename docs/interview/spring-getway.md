@@ -3,4 +3,5 @@ lang: zh-CN
 sidebarDepth: 2
 ---
 
-# 数据一致性方案设计
+# 网关选型与设计
+

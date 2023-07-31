@@ -12,4 +12,9 @@ sidebarDepth: 2
 ## 容器化
 
 
+## 服务的可观测服务
+
+http://doc.ruoyi.vip/ruoyi-cloud/cloud/skywalking.html
+
+
 
