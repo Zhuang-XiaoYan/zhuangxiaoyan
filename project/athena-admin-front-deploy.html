@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Athena-Admin-Front容器化部署文档 | 庄小焱</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="我是庄小焱，PMP项目管理专家、系统架构设计师(高级)、CSDN博文专家、后端开发工程师。 博主在微服务、虚拟化、系统架构、大数据、机器学习领域不断学习，同时在博客中分享自己学习知识和相关技术， 欢迎大家和我交流学习，欢迎大家关注我的博客。">
+    
+    <link rel="preload" href="/zhuangxiaoyan/assets/css/0.styles.43ec611f.css" as="style"><link rel="preload" href="/zhuangxiaoyan/assets/js/app.868ae4fe.js" as="script"><link rel="preload" href="/zhuangxiaoyan/assets/js/2.e0e92cc0.js" as="script"><link rel="preload" href="/zhuangxiaoyan/assets/js/75.9bcbf8d9.js" as="script"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/10.f03f824c.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/11.8bbceb5f.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/12.14f9a7e9.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/13.875c4422.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/14.b913d772.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/15.04d0022c.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/16.2f5474ed.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/17.314561f8.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/18.4f00aff9.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/19.3198a9c6.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/20.6ca58bc3.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/21.2b13b489.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/22.1ab1c76c.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/23.71e25b05.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/24.ad6ea50e.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/25.76e0a373.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/26.b9862941.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/27.aa410472.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/28.03808d20.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/29.00bd7baa.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/3.08485426.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/30.005c22a8.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/31.93f0d38f.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/32.340f8c91.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/33.4fd282b8.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/34.3a5d80ea.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/35.46a3fd70.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/36.a4d7d4a0.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/37.f4563f51.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/38.a4755c56.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/39.38a44f79.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/4.4d57c8c0.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/40.7ace36ef.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/41.16f6b68f.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/42.6d72579b.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/43.c87acddc.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/44.29fd9c56.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/45.1e066d5b.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/46.38a90e06.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/47.d01627f0.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/48.a24f2064.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/49.b385ae96.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/5.113b6e17.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/50.36614d52.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/51.0a4de0f4.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/52.f34a7e67.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/53.628cf4ca.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/54.cc220f8a.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/55.44be834a.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/56.a10f9160.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/57.889877cb.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/58.35998118.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/59.a96ac910.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/6.1a9b2f20.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/60.69ed00aa.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/61.cd318979.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/62.c1d36d16.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/63.d5921184.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/64.e337ae65.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/65.4754688d.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/66.f1e18825.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/67.90234ef8.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/68.17c41d12.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/69.d424f938.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/7.713b03d2.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/70.dcbc2969.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/71.7dce671a.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/72.ca24dbed.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/73.3746d1d5.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/74.b57bc73f.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/76.ad9819f6.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/77.1939880d.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/78.d4fe71a2.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/79.95e3a69e.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/8.4562fbf2.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/80.0c9cbcee.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/81.9f9d8638.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/82.4aeef92d.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/83.d69f52f7.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/84.a5ef042c.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/85.c37ffab6.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/86.6d5b65db.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/87.afa8b536.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/88.1c19772d.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/89.5f70dc04.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/9.7d7583a8.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/90.2a690c79.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/91.4d0be90d.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/92.d82b3978.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/93.50ab1b48.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/94.b8bd6e2a.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/95.1fc4557e.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/96.7063edd6.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/97.a7fd9d56.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/98.c7605566.js"><link rel="prefetch" href="/zhuangxiaoyan/assets/js/99.6fe2324c.js">
+    <link rel="stylesheet" href="/zhuangxiaoyan/assets/css/0.styles.43ec611f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zhuangxiaoyan/" class="home-link router-link-active"><!----> <span class="site-name">庄小焱</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zhuangxiaoyan/resume/" class="nav-link">
+  庄小焱简历
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/blog/" class="nav-link">
+  庄小焱博客
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/project/" class="nav-link router-link-active">
+  实战项目
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/interview/" class="nav-link">
+  面试项目
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/ai/" class="nav-link">
+  AI项目
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人账号" class="dropdown-title"><span class="title">个人账号</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人账号" class="mobile-dropdown-title"><span class="title">个人账号</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://zhuang-xiaoyan.github.io/zhuangxiaoyan/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Zhuang-XiaoYan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/xjl2462612540" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_41605937" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/zhuangxiaoyan/resume/" class="nav-link">
+  庄小焱简历
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/blog/" class="nav-link">
+  庄小焱博客
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/project/" class="nav-link router-link-active">
+  实战项目
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/interview/" class="nav-link">
+  面试项目
+</a></div><div class="nav-item"><a href="/zhuangxiaoyan/ai/" class="nav-link">
+  AI项目
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人账号" class="dropdown-title"><span class="title">个人账号</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人账号" class="mobile-dropdown-title"><span class="title">个人账号</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://zhuang-xiaoyan.github.io/zhuangxiaoyan/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Zhuang-XiaoYan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/xjl2462612540" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_41605937" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  庄小焱-CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>项目实战总览</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zhuangxiaoyan/project/" aria-current="page" class="sidebar-link">个人项目实战</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Cloud-Platform项目</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zhuangxiaoyan/project/cloud-platform.html" class="sidebar-link">一、Cloud-Platform项目</a></li><li><a href="/zhuangxiaoyan/project/cloud-platform-stack.html" class="sidebar-link">二、Cloud-Platform技术栈</a></li><li><a href="/zhuangxiaoyan/project/cloud-platform-interview.html" class="sidebar-link">三、Cloud-Platform面试总结</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>DevOps-Platform项目</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zhuangxiaoyan/project/devops-cicd.html" class="sidebar-link">一、DevOps-Platform项目</a></li><li><a href="/zhuangxiaoyan/project/devops-autotest.html" class="sidebar-link">二、DevOps-Platform自动化测试平台</a></li><li><a href="/zhuangxiaoyan/project/devops-package.html" class="sidebar-link">三、DevOps-Platform制品构建</a></li><li><a href="/zhuangxiaoyan/project/devops-monitor.html" class="sidebar-link">四、DevOps-Platform服务可观测性</a></li><li><a href="/zhuangxiaoyan/project/devops-stack.html" class="sidebar-link">五、DevOps-Platform技术栈</a></li><li><a href="/zhuangxiaoyan/project/devops-interview.html" class="sidebar-link">六、DevOps-Platform面试总结</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Mall电商项目</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zhuangxiaoyan/project/athena-mall-cloud.html" class="sidebar-link">Athena-Mall-Cloud微服务项目</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-cloud-stack.html" class="sidebar-link">Athena-Mall-Cloud微服务技术栈</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-cloud-deploy.html" class="sidebar-link">Athena-Mall-Cloud微服务部署</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-cloud-interview.html" class="sidebar-link">Athena-Mall-Cloud微服务面试总结</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-front.html" class="sidebar-link">Athena-Mall-Front前端项目</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-front-stack.html" class="sidebar-link">Athena-Mall-Front技术栈</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-front-deploy.html" class="sidebar-link">Athena-Mall-Front容器化部署文档</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-front-interview.html" class="sidebar-link">Athena-Mall-Front面试总结</a></li><li><a href="/zhuangxiaoyan/project/athena-mall-front-api.html" class="sidebar-link">Athena-Mall-Front服务接口文档</a></li><li><a href="/zhuangxiaoyan/project/athena-admin-front.html" class="sidebar-link">Athena-Admin-Front前端项目</a></li><li><a href="/zhuangxiaoyan/project/athena-admin-front-stack.html" class="sidebar-link">Athena-Admin-Front技术栈</a></li><li><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html" aria-current="page" class="active sidebar-link">Athena-Admin-Front容器化部署文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#一、安装docker服务" class="sidebar-link">一、安装Docker服务</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#二、编写dockerfile" class="sidebar-link">二、编写Dockerfile</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#三、添加-dockerignore" class="sidebar-link">三、添加.dockerignore</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#四、编写nginx-conf" class="sidebar-link">四、编写nginx.conf</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#五、构建服务镜像" class="sidebar-link">五、构建服务镜像</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#六、拉取镜像" class="sidebar-link">六、拉取镜像</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#七、运行容器" class="sidebar-link">七、运行容器</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#八、访问服务" class="sidebar-link">八、访问服务</a></li><li class="sidebar-sub-header"><a href="/zhuangxiaoyan/project/athena-admin-front-deploy.html#博文参考" class="sidebar-link">博文参考</a></li></ul></li><li><a href="/zhuangxiaoyan/project/athena-admin-front-interview.html" class="sidebar-link">Athena-Admin-Front面试总结</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>大数据库项目</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zhuangxiaoyan/project/hera-bigdata.html" class="sidebar-link">Hera-Bigdata</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="athena-admin-front容器化部署文档"><a href="#athena-admin-front容器化部署文档" class="header-anchor">#</a> Athena-Admin-Front容器化部署文档</h1> <h2 id="一、安装docker服务"><a href="#一、安装docker服务" class="header-anchor">#</a> 一、安装Docker服务</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">## 使用国内 daocloud 一键安装命令：</span>
+<span class="token function">sudo</span> <span class="token function">curl</span> -sSL https://get.daocloud.io/docker <span class="token operator">|</span> <span class="token function">sh</span>
+<span class="token function">sudo</span> <span class="token function">groupadd</span> docker <span class="token comment">##添加docker用户组</span>
+<span class="token function">sudo</span> gpasswd -a <span class="token environment constant">$USER</span> docker <span class="token comment">##将登陆用户加入到docker用户组中</span>
+newgrp docker <span class="token comment">##更新用户组</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">## 安装docker</span>
+<span class="token function">curl</span> -fsSL https://get.docker.com <span class="token operator">|</span> <span class="token function">bash</span> -s docker --mirror Aliyun
+<span class="token comment">## 启动docker服务</span>
+systemctl start docker
+<span class="token comment">## 设置docker开机自启</span>
+systemctl <span class="token builtin class-name">enable</span> docker
+<span class="token comment">## 配置docker加速器</span>
+<span class="token function">mkdir</span> -p /etc/docker
+<span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
+{
+  &quot;log-driver&quot;: &quot;json-file&quot;,
+  &quot;log-opts&quot;: {
+    &quot;max-size&quot;: &quot;10m&quot;,
+    &quot;max-file&quot;: &quot;3&quot;
+  }
+}
+EOF</span>
+<span class="token comment">## 重启docker服务</span>
+systemctl daemon-reload
+systemctl restart docker
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Docker安装完成！&quot;</span>
+</code></pre></div><h2 id="二、编写dockerfile"><a href="#二、编写dockerfile" class="header-anchor">#</a> 二、编写Dockerfile</h2> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> node<span class="token punctuation">:</span>14
+<span class="token keyword">COPY</span> ./ /app
+<span class="token keyword">WORKDIR</span> /app
+<span class="token keyword">RUN</span> npm install &amp;&amp; npm run build
+
+<span class="token keyword">FROM</span> nginx
+<span class="token keyword">RUN</span> mkdir /app
+<span class="token keyword">COPY</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>from=0 /app/dist /app
+<span class="token keyword">COPY</span> nginx/nginx.conf /etc/nginx/nginx.conf
+</code></pre></div><h2 id="三、添加-dockerignore"><a href="#三、添加-dockerignore" class="header-anchor">#</a> 三、添加.dockerignore</h2> <p>设置 .dockerignore 文件能防止 node_modules 和其他中间构建产物被复制到镜像中导致构建问题。</p> <div class="language-html extra-class"><pre class="language-html"><code>**/node_modules
+**/dist
+</code></pre></div><h2 id="四、编写nginx-conf"><a href="#四、编写nginx-conf" class="header-anchor">#</a> 四、编写nginx.conf</h2> <div class="language-html extra-class"><pre class="language-html"><code>user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+events {
+  worker_connections  1024;
+}
+
+http {
+  include       /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                    '$status $body_bytes_sent &quot;$http_referer&quot; '
+                    '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+  access_log  /var/log/nginx/access.log  main;
+  sendfile        on;
+  keepalive_timeout  65;
+  server {
+    listen       80;
+    server_name  localhost;
+    location / {
+      root   /app;
+      index  index.html;
+      try_files $uri $uri/ /index.html;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+      root   /usr/share/nginx/html;
+    }
+    ## 配置代理，解决跨域问题
+    location /api {
+    	proxy_pass http://sph-h5-api.atguigu.cn/api;
+    }
+  }
+}
+</code></pre></div><h2 id="五、构建服务镜像"><a href="#五、构建服务镜像" class="header-anchor">#</a> 五、构建服务镜像</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>docker build <span class="token builtin class-name">.</span> -t vue-mall:1.0.0
+</code></pre></div><h2 id="六、拉取镜像"><a href="#六、拉取镜像" class="header-anchor">#</a> 六、拉取镜像</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>docker pull registry.cn-hangzhou.aliyuncs.com/athena-zhaungxiaoyan/athena-mall-product:1.0.0
+</code></pre></div><img src="/zhuangxiaoyan/project/athena-mall/docker-registery.png" alt="registery"> <h2 id="七、运行容器"><a href="#七、运行容器" class="header-anchor">#</a> 七、运行容器</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>docker run --privileged<span class="token operator">=</span>true --restart<span class="token operator">=</span>always -name<span class="token operator">==</span>vue-mall -d -p <span class="token number">80</span>:80  vue-mall:1.0.0 
+</code></pre></div><h2 id="八、访问服务"><a href="#八、访问服务" class="header-anchor">#</a> 八、访问服务</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>http://remote-ip/
+</code></pre></div><img src="/zhuangxiaoyan/project/athena-mall/docker-deploy.png" alt="deploy"> <h2 id="博文参考"><a href="#博文参考" class="header-anchor">#</a> 博文参考</h2> <p>-<a href="https://sms-activate.org/cn/" target="_blank" rel="noopener noreferrer">国外的虚拟电话<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/zhuangxiaoyan/project/athena-admin-front-stack.html" class="prev">
+        Athena-Admin-Front技术栈
+      </a></span> <span class="next"><a href="/zhuangxiaoyan/project/athena-admin-front-interview.html">
+        Athena-Admin-Front面试总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/zhuangxiaoyan/assets/js/app.868ae4fe.js" defer></script><script src="/zhuangxiaoyan/assets/js/2.e0e92cc0.js" defer></script><script src="/zhuangxiaoyan/assets/js/75.9bcbf8d9.js" defer></script>
+  </body>
+</html>
